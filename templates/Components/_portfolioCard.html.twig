@@ -1,0 +1,33 @@
+<div class="blog-card" id="portfolio-{{ portfolio.id }}">
+	<div class="blog-card-img">
+		<a href="{{ path('app.portfolios.show', {slug: portfolio.slug}) }}">
+			{% for image in portfolio.images|slice(0,1) %}
+				<img src="{{ vich_uploader_asset(image) }}" alt="{{ portfolio.title }}" loading="lazy">
+			{% else %}
+				<img src="https://picsum.photos/300/300" alt="{{ portfolio.title }}" loading="lazy">
+			{% endfor %}
+		</a>
+	</div>
+	<div class="blog-card-content">
+		<p class="blog-card-content-date">
+			<i class="bi bi-calendar-range-fill"></i>
+			{{ portfolio.createdAt|format_datetime('full', 'none') }}
+		</p>
+		<a href="{{ path('app.portfolios.show', {slug: portfolio.slug}) }}">
+			<h2 class="blog-card-content-title">{{ portfolio.title|sanitize_html }}</h2>
+		</a>
+		<p class="blog-card-content-desc">{{ portfolio.content|slice(0, 150)|sanitize_html|striptags }}...</p>
+		<em class="blog-card-content-tags text-muted">
+			{% for categorie in portfolio.categories %}
+				#{{ categorie.title }}
+			{% endfor %}
+		</em>
+		<p class="blog-card-content-autor">{{ portfolio.user.fullName }}</p>
+		{% if app.request.get('_route') == 'admin.portfolios.index' %}
+			<div class="d-flex justify-content-between">
+				<a href="{{ path('admin.portfolios.edit', {id: portfolio.id}) }}" class="btn btn-warning">Modifier</a>
+				{% include 'Backend/portfolio/_deleteForm.html.twig' %}
+			</div>
+		{% endif %}
+	</div>
+</div>

@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Admin Photos
+	{{ parent() }}
+
+{% endblock %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	{{ encore_entry_link_tags('admin') }}
+{% endblock %}
+
+{% block javascripts %}
+	{{ parent() }}
+	{{ encore_entry_script_tags('admin') }}
+{% endblock %}
+
+{% block body %}
+	<section>
+		<h1>Administration des Photos</h1>
+		<a href="{{ path('admin.portfolio.create') }}" class="btn btn-primary mt-4">Créer un photo</a>
+		<div>
+			{% for portfolio in portfolios %}
+				{% include 'Components/_portfolioCard.html.twig' %}
+			{% endfor %}
+		</div>
+	</section>
+{% endblock %}
