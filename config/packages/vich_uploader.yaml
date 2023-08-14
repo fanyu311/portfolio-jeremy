@@ -1,5 +1,22 @@
+# knp_gaufrette:
+#     stream_wrapper: ~
 vich_uploader:
-    db_driver: orm
+    db_driver: orm 
+
+    mappings:
+        portfolios:
+            uri_prefix: /images/portfolios
+            upload_destination: "%kernel.project_dir%/public/images/portfolios"
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+            directory_namer: app.directory_namer.portfolio
+            inject_on_load: false
+            delete_on_update: true
+            delete_on_remove: true
+
+
+
+    metadata:
+        type: attribute
 
     #mappings:
     #    products:
@@ -7,4 +24,4 @@ vich_uploader:
     #        upload_destination: '%kernel.project_dir%/public/images/products'
     #        namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
 
-
+  

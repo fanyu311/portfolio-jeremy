@@ -1,7 +1,15 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Jeremy
+{% block title %}
+	Homepage
 	{{ parent() }}
 {% endblock %}
 
-{% block body %}{% endblock %}
+{% block body %}
+
+	<div class="home-body">
+		{% include 'Layout/header.html.twig' %}
+	</div>
+
+
+{% endblock %}

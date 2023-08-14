@@ -101,52 +101,201 @@ pre {
     border-radius: $border-radius;
 }
 
-.parent-input-password {
-    position: relative;
-
-    .icon-password {
-        position: absolute;
-        top: 50%;
-        right: 1%;
-        transform: translate(-50%, -50%);
-    }
+.titre {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  margin: 2em 0;
+}
+.titre h1 {
+  margin: 1em 0;
 }
 
 /********** NAVBAR ****************/
+
 .navbar {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+  // width: 100%;
+  // height: 112px;
+  // display: flex;
+  // justify-content: space-around;
+  // height: calc(120vh - 112px);
+  // background: top / cover url('../images/banner.jpg');
+  // font-family: 'Dancing Script', sans-serif;
+  display: flex;
+  justify-content: space-around;
+  height: 110px;
+}
+.navbar a {
     margin-top: 3em;
-}
-.navbar-left {
-    font-size: 2em;
-    font-family: 'Annie Use Your Telescope', sans-serif;
-    
-    
-}
-.navbar-right {
+    color: rgb(208, 201, 201);
     font-family: 'Angkor', sans-serif;
+    height: 2em;
+    &:hover {
+      color: $secondary;
+    }
 }
-.navbar-list{
-    
-    white-space: nowrap;
-    
-    
+
+.name {
+  font-size: 3.5em;
+  font-family: 'Annie Use Your Telescope', sans-serif;
 }
-.navbar-list li {
-    display: inline-block;
-    text-align: center;
-    width: 30%;
-    
+
+
+.btn {
+    background: rgb(188, 89, 39);
+    border-radius: $border-radius;
+    padding: .5em;
+}
+
+.a-btn{
+  background-color: rgb(144, 186, 129);
+  border-radius: $border-radius;
+  width: 150px;
+  text-align: center;
+  color: black;
+  margin: 0 .5em;
+}
+.b-btn {
+  border: none;
+  background-color: rgb(216, 146, 85);
+  border-radius: $border-radius;
+  width: 150px;
+  height: 28px;
+  text-align: center;
+  color: #ecfae9;
+  margin: 0 .5em;
+}
+
+
+/************** LOGIN ****************/
+
+  .container {
+    width: 500px;
+    height: 400px;
+  /*  Pour centrer le contenu d'un bloc  */
+    text-align: center; 
+  /*  Pour centrer un bloc on doit d'abord préciser le width et utiliser ensuite la prop margin  */
+    margin : auto;
+    background-color: rgba(68, 75, 84,0.8);
+    margin-top: 150px ;
+    border-radius: 5px;
+  }
+  img {
+    width: 150px;
+    height:150px;
+    border-radius:50%;
+    margin-top:-70px;
+    margin-bottom: 30px;
+  }
+   input {
+    height: 40px;
+    width: 300px;
+    font-size: 18px;
+    font-family: "Lato";
+    margin-bottom: 10px;
+    border-radius: 5px;
+    padding-left: 35px;
+  }
+  .form-input {
+    position:relative;
+  }
+  .fa-lock, .fa-user {
+    position:absolute;
+    top: 8px;
+    left: 88px;
+    color:#3BA8A5;
+  }
+  
+  #submit {
+    width: 80px;
+    height: 40px;
+    padding: 5px;
+    background-color: #D6D6D6;
+    border-style: none;
+    margin-top: 30px;
+    margin-bottom: 30px
+  }
+  #submit:hover {
+    cursor: pointer;
+    background-color: #575C56;
+    color: white;
+  }
+  
+  /************************FOOTER************************/
+  .footer{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    background: rgb(250, 248, 248);
+    align-items: center;
+    justify-items: center;
+    padding: 1em;
+    font-size: 1.5em;
    
-}
-.navbar-list li a {
-    display: block;
-    padding: 2.5em;
-    
-    
-}
-.navbar-list li a:hover{
+  }
+  .footer-left a:hover,
+  .footer-right a:hover{
     color: $secondary;
+  }
+.footer-middle{
+    text-align: center;
 }
+.bi {
+    padding: 1em;
+}
+//   让footer里的三个板块全部保持到最底下
+  .page-container {
+    position: relative;
+    min-height: 100vh;
+  }
+  
+  .content-wrap {
+    padding-bottom: 2.5rem;    /* Footer height */
+  }
+  
+  .page-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;            /* Footer height */
+  }
+
+  .footer p ,
+  .footer a {
+    color: #575C56;
+  }
+/*************CREATE PHOTO****************/
+.create {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    background: #ecfae9;
+    margin-top: 3em;
+    padding: 5em;
+}
+.create-titre {
+    padding: 1em;
+}
+// 调整表单的均匀分配的长度一直
+.form label {
+    display: inline-block;
+    width: 90px;
+    height:30px;
+    line-height:30px;
+    vertical-align: middle;
+    text-align: justify;
+    text-align-last: justify 
+
+}
+.form textarea,
+.form input  {
+    width: 600px;
+}
+.create-btn {
+    align-items: center;
+}
+

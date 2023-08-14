@@ -1,0 +1,5 @@
+<form action="{{ path('admin.portfolios.delete') }}" method="POST" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cet photo ?')">
+	<input type="hidden" name="id" value="{{ portfolio.id }}">
+	<input type="hidden" name="token" value="{{ csrf_token('delete' ~ portfolio.id) }}">
+	<button type="submit" class="b-btn">Supprimer</button>
+</form>

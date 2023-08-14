@@ -17,13 +17,18 @@
 {% endblock %}
 
 {% block body %}
+	{% include 'Layout/header.html.twig' %}
 	<section>
-		<h1>Administration des Photos</h1>
-		<a href="{{ path('admin.portfolio.create') }}" class="btn btn-primary mt-4">Créer un photo</a>
+		<div class="titre">
+			<h1>Administration des Photos</h1>
+			<a href="{{ path('admin.portfolios.create') }}" class="a-btn">Créer un photo</a>
+		</div>
+
 		<div>
 			{% for portfolio in portfolios %}
 				{% include 'Components/_portfolioCard.html.twig' %}
 			{% endfor %}
+
 		</div>
 	</section>
 {% endblock %}

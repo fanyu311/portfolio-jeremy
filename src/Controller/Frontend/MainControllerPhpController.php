@@ -2,18 +2,19 @@
 
 namespace App\Controller\Frontend;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Repository\PortfolioRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 
 class MainControllerPhpController extends AbstractController
 {
     #[Route('', name: 'app.homepage', methods: ['GET'])]
-    public function index(): Response
+    public function index(PortfolioRepository $portfolioRepo): Response
     {
         return $this->render('Frontend/Home/index.html.twig', [
-            'controller_name' => 'MainControllerPhpController',
+            'portfolio' => $portfolioRepo->findAllWithRelationInfo(),
         ]);
     }
 }

@@ -3,16 +3,19 @@
 namespace App\Entity;
 
 
-use Gedmo\Slug;
+
+
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use App\Repository\PortfolioRepository;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 #[ORM\Entity(repositoryClass: PortfolioRepository::class)]
-#[UniqueEntity(fields: ['titre'], message: 'Le titre est déjà utilisé par un autre photo')]
+#[UniqueEntity(fields: ['title'], message: 'Le titre est déjà utilisé par un autre photo')]
 class Portfolio
 {
     #[ORM\Id]
@@ -64,6 +67,20 @@ class Portfolio
         maxMessage: 'La méta description ne peut pas faire plus de {{ limit }} caractères'
     )]
     private ?string $metaDescription = null;
+
+    #[ORM\ManyToOne(inversedBy: 'portfolios')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?User $user = null;
+
+    #[ORM\OneToMany(mappedBy: 'portfolio', targetEntity: PortfolioImage::class, orphanRemoval: true, cascade: ['persist'])]
+    private Collection $images;
+
+    public function __construct()
+    {
+        $this->images = new ArrayCollection();
+    }
+
+
 
     public function getId(): ?int
     {
@@ -150,6 +167,48 @@ class Portfolio
     public function setMetaDescription(string $metaDescription): static
     {
         $this->metaDescription = $metaDescription;
+
+        return $this;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): static
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, PortfolioImage>
+     */
+    public function getImages(): Collection
+    {
+        return $this->images;
+    }
+
+    public function addImage(PortfolioImage $image): static
+    {
+        if (!$this->images->contains($image)) {
+            $this->images->add($image);
+            $image->setPortfolio($this);
+        }
+
+        return $this;
+    }
+
+    public function removeImage(PortfolioImage $image): static
+    {
+        if ($this->images->removeElement($image)) {
+            // set the owning side to null (unless already changed)
+            if ($image->getPortfolio() === $this) {
+                $image->setPortfolio(null);
+            }
+        }
 
         return $this;
     }

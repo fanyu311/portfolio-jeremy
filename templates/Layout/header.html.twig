@@ -1,30 +1,16 @@
 <header class="navbar">
-	<div class="navbar-left">
 
-		<a href="{{ path('app.homepage') }}">
 
-			<i class="bi bi-camera2">
-				JEREMY</i>
-		</a>
+	<a class="nav-link{{app.request.get('_route') == 'app.homepage'?'active'}}" href="{{ path('app.homepage')}}">ACCUEIL</a>
+	<a class="nav-link{{ app.request.get('_route') == 'app.portfolios.index' ? 'active' }}" href="{{ path('admin.portfolios.index')}}">PORTFOLIO</a>
+	<a href="{{ path('app.homepage') }}">
+		<p class="name">JEREMY</p>
+	</a>
+	<a href="#">ABOUT</a>
+	<a href="#">CONTACT</a>
 
-	</div>
-	<div class="navbar-right">
-		<ul class="navbar-list">
 
-			<li>
-				<a href="#">ACCUEIL</a>
-			</li>
-			<li>
-				<a href="#">PORTFOLIO</a>
-			</li>
-			<li>
-				<a href="#">ABOUT</a>
-			</li>
-			<li>
-				<a href="#">CONTACT</a>
-			</li>
-
-		</ul>
-	</div>
-
+	{% if is_granted('ROLE_ADMIN') %}
+		<a href="{{ path('app.logout') }}" class="btn">Se deconnecter</a>
+	{% endif %}
 </header>

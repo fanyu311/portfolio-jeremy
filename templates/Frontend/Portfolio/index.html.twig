@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Liste de Photos
+	{{ parent() }}
+
+{% endblock %}
+
+{% block stylesheets %}
+
+	{{ parent() }}
+	{{ encore_entry_link_tags('app') }}
+{% endblock %}
+
+{% block javascripts %}
+	{{ parent() }}
+	{{ encore_entry_script_tags('app') }}
+{% endblock %}
+
+{% block body %}
+	{% include 'Layout/header.html.twig' %}
+	<section>
+		<h1>Administration des Photos</h1>
+		<a href="{{ path('app.portfolios.create') }}" class="btn btn-primary mt-4">Liste de Photos</a>
+		<div>
+			{% for portfolio in portfolios %}
+				{% include 'Components/_portfolioCard.html.twig' %}
+			{% endfor %}
+		</div>
+	</section>
+{% endblock %}

@@ -18,8 +18,16 @@
 		{% endblock %}
 	</head>
 	<body>
-		{% include 'Layout/header.html.twig' %}
-		{% block body %}{% endblock %}
-	</body>
 
-</html>
+
+		<div class="page-container"> {% block body %}{% endblock %}
+
+			</div>
+			<div class="content-wrap"></div>
+			<div class="page-footer">
+				{% include 'Layout/footer.html.twig' %}
+			</div>
+
+		</body>
+
+	</html>

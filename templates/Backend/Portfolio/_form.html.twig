@@ -1,16 +1,30 @@
 {{ form_start(form, {'attr': {'class': 'form'}}) }}
+
+
 {{ form_row(form.title) }}
-<div class="row">
-	<div>
-		{{ form_row(form.metaTitle) }}
-	</div>
-	<div>{{ form_row(form.metaDescription) }}</div>
+
+
+{{ form_row(form.metaTitle) }}
+
+{{ form_row(form.metaDescription) }}
+
+
+<div class="text-start">
+	<label for="image">
+		<input type="file">
+
+		{{ form_row(images) }}
+
+	</label>
+
+
 </div>
 
 {{ form_row(form.content) }}
 
-<div class="text-center">
-	<button class="btn btn-primary" type="submit">{{ buttonLabel|default('Save') }}</button>
+
+<div class="button">
+	<button class="create-btn" type="submit">{{ buttonLabel|default('Save') }}</button>
 </div>
 
 {{ form_row(form._token) }}

@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Création d'une photo
+	{{ parent() }}
+{% endblock %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	{# {{ encore_entry_link_tags('admin') }} #}
+{% endblock %}
+
+{% block javascripts %}
+	{{ parent() }}
+	{# {{ encore_entry_script_tags('admin') }} #}
+{% endblock %}
+
+{% block body %}
+	<section class="create">
+		<h1 class="create-titre">Création d'une photo</h1>
+		<div class="create-container">
+
+			{% include 'Backend/Portfolio/_form.html.twig' with { buttonLabel: 'Créer' } %}
+		</div>
+	</section>
+
+{% endblock %}

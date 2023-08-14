@@ -3,11 +3,13 @@
 namespace App\Form;
 
 use App\Entity\Portfolio;
+use App\Form\PortfolioImageType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 
 class PortfolioType extends AbstractType
 {
@@ -15,37 +17,44 @@ class PortfolioType extends AbstractType
     {
         $builder
             ->add('title', TextType::class, [
-                'label' => 'portfolio.title.label',
+                'label' => 'Titre:',
                 'required' => true,
                 'sanitize_html' => true,
                 'attr' => [
-                    'placeholder' => 'portfolio.title.placeholder',
+                    'placeholder' => 'votre titre...',
                 ]
             ])
             ->add('content', TextareaType::class, [
-                'label' => 'portfolio.content.label',
+                'label' => 'Content:',
                 'required' => true,
                 'sanitize_html' => true,
                 'attr' => [
-                    'placeholder' => 'portfolio.content.placeholder',
+                    'placeholder' => 'créer content...',
                     'rows' => 5,
                 ]
             ])
             ->add('metaTitle', TextType::class, [
-                'label' => 'portfolio.metaTitle.label',
+                'label' => 'MetaTitle:',
                 'required' => true,
                 'sanitize_html' => true,
                 'attr' => [
-                    'placeholder' => 'portfolio.metaTitle.placeholder',
+                    'placeholder' => 'metaTitle...',
                 ]
             ])
             ->add('metaDescription', TextType::class, [
-                'label' => 'portfolio.metaDesc.label',
+                'label' => 'MetaDesc:',
                 'required' => true,
                 'sanitize_html' => true,
                 'attr' => [
-                    'placeholder' => 'portfolio.metaDesc.placeholder',
+                    'placeholder' => 'MetaDescription...',
                 ]
+            ])
+            ->add('images', CollectionType::class, [
+                'entry_type' => PortfolioImageType::class,
+                'allow_add' => true,
+                'allow_delete' => true,
+                'delete_empty' => true,
+                'by_reference' => false
             ]);
     }
 
