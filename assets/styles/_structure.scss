@@ -125,6 +125,8 @@ pre {
   display: flex;
   justify-content: space-around;
   height: 110px;
+  position: sticky;
+  top: 0;
 }
 .navbar a {
     margin-top: 3em;
