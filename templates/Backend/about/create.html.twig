@@ -5,11 +5,12 @@
 {% endblock %}
 {% block body %}
 	{% include 'Layout/header.html.twig' %}
-	<div class="container-fluid mt-4">
-		<div class="card w-50 mx-auto p-3">
-			<h1 class="text-center">Création d'une presentation</h1>
+	<section class="create">
+		<h1 class="create-titre">Création d'une presentation</h1>
+		<div class="create-container">
+
 			{% include 'Backend/About/_form.html.twig' with { buttonLabel: 'Créer' } %}
 			<a href="{{path('admin.about.index')}}" class="lien-list">Retourne à la page about</a>
 		</div>
-	</div>
+	</section>
 {% endblock %}
