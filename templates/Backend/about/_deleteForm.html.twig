@@ -1,0 +1,6 @@
+<form action="{{ path('admin.about.delete') }}" method="POST" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cette presentation ?')">
+
+	<input type="hidden" name="id" value="{{ present.id }}">
+	<input type="hidden" name="token" value="{{ csrf_token('delete' ~ present.id) }}">
+	<button type="submit" class="b-btn">Supprimer</button>
+</form>

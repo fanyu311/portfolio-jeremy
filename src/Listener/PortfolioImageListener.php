@@ -12,7 +12,7 @@ use Doctrine\Bundle\DoctrineBundle\Attribute\AsEntityListener;
 
 #[AsEntityListener(event: Events::preUpdate, method: 'preUpdate', entity: Portfolio::class)]
 #[AsEntityListener(event: Events::postRemove, method: 'postRemove', entity: Portfolio::class)]
-class PortfolioImageListener
+class ArticleImageListener
 {
     public function __construct(
         private KernelInterface $kernel
@@ -33,7 +33,7 @@ class PortfolioImageListener
                         $image = new File($path);
 
                         $image->move(
-                            $this->kernel->getProjectDir() . '/public/images/articles/' . $portfolio->getSlug()
+                            $this->kernel->getProjectDir() . '/public/images/portfolios/' . $portfolio->getSlug()
                         );
                     } else {
                         throw new Exception("Image: $path not found");

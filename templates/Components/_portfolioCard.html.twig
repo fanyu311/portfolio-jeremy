@@ -1,5 +1,7 @@
-<div class="card">
-	<img src="../../../public/images/portfolios" alt="photo">
+<div class="card-portfolio">
+
+	<img src="{{ vich_uploader_asset(portfolio, 'image')}}" alt="">
+
 	<div class="card-body">
 		<h1>{{ portfolio.title}}</h1>
 		<p class="blog-card-content-date">

@@ -181,7 +181,7 @@ pre {
     margin-top: 150px ;
     border-radius: 5px;
   }
-  img {
+  .container-img {
     width: 150px;
     height:150px;
     border-radius:50%;
@@ -234,7 +234,6 @@ pre {
     justify-items: center;
     padding: 1em;
     font-size: 1.5em;
-   
   }
   .footer-left a:hover,
   .footer-right a:hover{
@@ -248,19 +247,24 @@ pre {
 }
 //   让footer里的三个板块全部保持到最底下
   .page-container {
-    position: relative;
+    // position: relative;
+    // min-height: 100vh;
+    margin:0;
+    display: flex;
+    flex-direction: column;
     min-height: 100vh;
   }
   
-  .content-wrap {
-    padding-bottom: 2.5rem;    /* Footer height */
-  }
+  // .content-wrap {
+  //   padding-bottom: 2.5rem;    /* Footer height */
+  // }
   
   .page-footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 2.5rem;            /* Footer height */
+    // position: absolute;
+    // bottom: 0;
+    // width: 100%;
+    // height: 2.5rem;  
+    flex: 1;          /* Footer height */
   }
 
   .footer p ,
@@ -273,9 +277,8 @@ pre {
     flex-direction: column;
     justify-items: center;
     align-items: center;
-    background: #ecfae9;
-    margin-top: 3em;
-    padding: 5em;
+    background: white;
+    padding: 3em;
 }
 .create-titre {
     padding: 1em;

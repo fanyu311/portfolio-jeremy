@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Modifier d'une photo
+	{{ parent() }}
+{% endblock %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	{{ encore_entry_link_tags('admin') }}
+{% endblock %}
+
+{% block javascripts %}
+	{{ parent() }}
+	{{ encore_entry_script_tags('admin') }}
+{% endblock %}
+
+{% block body %}
+	{% include 'Layout/header.html.twig' %}
+	<section class="create">
+		<h1 class="create-titre">Modifier d'une photo</h1>
+		<div class="create-container">
+
+			{% include 'Backend/About/_form.html.twig' with { buttonLabel: 'Modifier' } %}
+		</div>
+	</section>
+
+{% endblock %}

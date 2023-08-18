@@ -1,4 +1,4 @@
-.card{
+.card-portfolio{
     display: inline-block;
     width: calc(32% - 3em);
     background-color: #ffffff;
@@ -9,10 +9,10 @@
     margin: 2em;
     margin-top: 5em;
   }
-  .card:hover {
+  .card-portfolio:hover {
     transform: translateY(-5px);
 }
-  .card img {
+  .card-portfolio img {
     width: 100%;
     height: auto;
     display: block;

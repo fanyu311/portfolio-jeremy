@@ -7,20 +7,22 @@
 
 {% block stylesheets %}
 	{{ parent() }}
-	{# {{ encore_entry_link_tags('admin') }} #}
+	{{ encore_entry_link_tags('admin') }}
 {% endblock %}
 
 {% block javascripts %}
 	{{ parent() }}
-	{# {{ encore_entry_script_tags('admin') }} #}
+	{{ encore_entry_script_tags('admin') }}
 {% endblock %}
 
 {% block body %}
+	{% include 'Layout/header.html.twig' %}
 	<section class="create">
 		<h1 class="create-titre">Création d'une photo</h1>
 		<div class="create-container">
 
 			{% include 'Backend/Portfolio/_form.html.twig' with { buttonLabel: 'Créer' } %}
+			<a href="{{path('admin.portfolios.index')}}" class="lien-list">Retourne à la liste de photo</a>
 		</div>
 	</section>
 

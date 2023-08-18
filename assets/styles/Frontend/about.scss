@@ -1,0 +1,21 @@
+.card-about {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 3em;
+}
+.card-about img {
+        width: 40%;
+        height: 500px;
+        margin-top: 1em;
+}
+.about-body {
+    margin: 4em 0;
+    width: 60%;
+}
+.about-content{
+    margin-top: 1em;
+    text-align: justify;
+}

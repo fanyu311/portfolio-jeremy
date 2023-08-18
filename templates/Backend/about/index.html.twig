@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Admin About
+	{{ parent() }}
+{% endblock %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	{{ encore_entry_link_tags('admin') }}
+{% endblock %}
+
+{% block javascripts %}
+	{{ parent() }}
+	{{ encore_entry_script_tags('admin') }}
+{% endblock %}
+{% block body %}
+	{% include 'Layout/header.html.twig' %}
+	<div class="titre">
+		<h1>About me
+		</h1>
+		<a href="{{ path('admin.about.create') }}" class="a-btn">Create  present</a>
+	</div>
+	{% for present in about %}
+		{% include 'Components/_aboutCard.html.twig' %}
+	{% endfor %}
+
+
+{% endblock %}

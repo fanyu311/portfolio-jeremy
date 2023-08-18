@@ -9,12 +9,13 @@ use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use App\Repository\PortfolioRepository;
-use Doctrine\Common\Collections\Collection;
-use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 #[ORM\Entity(repositoryClass: PortfolioRepository::class)]
+#[Vich\Uploadable]
 #[UniqueEntity(fields: ['title'], message: 'Le titre est déjà utilisé par un autre photo')]
 class Portfolio
 {
@@ -68,17 +69,24 @@ class Portfolio
     )]
     private ?string $metaDescription = null;
 
+
+    // stock connue 
+    #[Vich\UploadableField(mapping: 'portfolios', fileNameProperty: 'imageName', size: 'imageSize')]
+    private ?File $image = null;
+
+    #[ORM\Column(nullable: true)]
+    // stocker le name a BDD
+    private ?string $imageName = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?string $imageSize = null;
+
+
     #[ORM\ManyToOne(inversedBy: 'portfolios')]
     #[ORM\JoinColumn(nullable: false)]
     private ?User $user = null;
 
-    #[ORM\OneToMany(mappedBy: 'portfolio', targetEntity: PortfolioImage::class, orphanRemoval: true, cascade: ['persist'])]
-    private Collection $images;
 
-    public function __construct()
-    {
-        $this->images = new ArrayCollection();
-    }
 
 
 
@@ -107,6 +115,57 @@ class Portfolio
     public function setContent(string $content): static
     {
         $this->content = $content;
+
+        return $this;
+    }
+
+    public function getImage(): ?File
+    {
+        return $this->image;
+    }
+
+    /**
+     * If manually uploading a file (i.e. not using Symfony Form) ensure an instance
+     * of 'UploadedFile' is injected into this setter to trigger the update. If this
+     * bundle's configuration parameter 'inject_on_load' is set to 'true' this setter
+     * must be able to accept an instance of 'File' as the bundle will inject one here
+     * during Doctrine hydration.
+     *
+     * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile|null $imageFile
+     */
+    public function setImage(?File $imageFile = null): self
+    {
+        $this->image = $imageFile;
+
+        if (null !== $imageFile) {
+            // It is required that at least one field changes if you are using doctrine
+            // otherwise the event listeners won't be called and the file is lost
+            $this->updatedAt = new \DateTimeImmutable();
+        }
+
+        return $this;
+    }
+
+    public function getImageName(): ?string
+    {
+        return $this->imageName;
+    }
+
+    public function setImageName(?string $imageName): static
+    {
+        $this->imageName = $imageName;
+
+        return $this;
+    }
+
+    public function getImageSize(): ?int
+    {
+        return $this->imageSize;
+    }
+
+    public function setImageSize(?int $imageSize): static
+    {
+        $this->imageSize = $imageSize;
 
         return $this;
     }
@@ -179,36 +238,6 @@ class Portfolio
     public function setUser(?User $user): static
     {
         $this->user = $user;
-
-        return $this;
-    }
-
-    /**
-     * @return Collection<int, PortfolioImage>
-     */
-    public function getImages(): Collection
-    {
-        return $this->images;
-    }
-
-    public function addImage(PortfolioImage $image): static
-    {
-        if (!$this->images->contains($image)) {
-            $this->images->add($image);
-            $image->setPortfolio($this);
-        }
-
-        return $this;
-    }
-
-    public function removeImage(PortfolioImage $image): static
-    {
-        if ($this->images->removeElement($image)) {
-            // set the owning side to null (unless already changed)
-            if ($image->getPortfolio() === $this) {
-                $image->setPortfolio(null);
-            }
-        }
 
         return $this;
     }

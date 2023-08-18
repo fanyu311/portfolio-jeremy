@@ -23,6 +23,9 @@ class PortfolioRepository extends ServiceEntityRepository
 
     public function save(Portfolio $entity, bool $flush = true): void
     {
+        // persist 持续 -》 git add .dans le file d'attend
+        // 例如：boucle fort plein de utilisateur tous sont dans le file d'attend 
+        // flush -> cette fois bon vous pouvez envoyer a base de donnee 
         $this->getEntityManager()->persist($entity);
 
         if ($flush) {
@@ -43,9 +46,8 @@ class PortfolioRepository extends ServiceEntityRepository
     public function findAllWithRelationInfo(): array
     {
         return $this->createQueryBuilder('p')
-            ->select('p', 'u', 'i')
+            ->select('p', 'u')
             ->innerJoin('p.user', 'u')
-            ->leftJoin('p.images', 'i')
             ->getQuery()
             ->getResult();
     }

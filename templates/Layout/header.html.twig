@@ -6,7 +6,7 @@
 	<a href="{{ path('app.homepage') }}">
 		<p class="name">JEREMY</p>
 	</a>
-	<a href="#">ABOUT</a>
+	<a class="nav-link{{ app.request.get('_route') == 'app.about.index' ? 'active' }}" href="{{ path('admin.about.index')}}">ABOUT</a>
 	<a href="#">CONTACT</a>
 
 

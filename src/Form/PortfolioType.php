@@ -6,10 +6,12 @@ use App\Entity\Portfolio;
 use App\Form\PortfolioImageType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
-use Symfony\Component\Form\Extension\Core\Type\CollectionType;
+
 
 class PortfolioType extends AbstractType
 {
@@ -49,12 +51,13 @@ class PortfolioType extends AbstractType
                     'placeholder' => 'MetaDescription...',
                 ]
             ])
-            ->add('images', CollectionType::class, [
-                'entry_type' => PortfolioImageType::class,
-                'allow_add' => true,
+            ->add('image', VichImageType::class, [
+                'label' => 'Image:',
+                'required' => false,
                 'allow_delete' => true,
-                'delete_empty' => true,
-                'by_reference' => false
+                'delete_label' => 'Supprimer l\'image',
+                'image_uri' => true,
+                'download_uri' => false,
             ]);
     }
 

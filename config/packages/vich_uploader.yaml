@@ -3,20 +3,35 @@
 vich_uploader:
     db_driver: orm 
 
+
+    metadata:
+        type: attribute
+
+    # 添加mapping，如果再有别的类型的也可以在下方添加
+    # mapping->quel chemin pour utiliser 
     mappings:
         portfolios:
             uri_prefix: /images/portfolios
+            # "%kernel.project_dir%/ -> racine de votre prjet
             upload_destination: "%kernel.project_dir%/public/images/portfolios"
             namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
-            directory_namer: app.directory_namer.portfolio
+            # directory_namer: 
+            #     service: Vich\UoloaderBundl\Naming\PropertyDirectoryNamer
+            
+
             inject_on_load: false
             delete_on_update: true
             delete_on_remove: true
 
+        about:
+            uri_prefix: /images/about
+            upload_destination: "%kernel.project_dir%/public/images/about"
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+            
 
 
-    metadata:
-        type: attribute
+
+   
 
     #mappings:
     #    products:

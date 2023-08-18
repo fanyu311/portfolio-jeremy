@@ -20,14 +20,17 @@
 	<body>
 
 
-		<div class="page-container"> {% block body %}{% endblock %}
+		<div class="page-container">
+			{% include 'Layout/messages.html.twig' %}
+			{% block body %}{% endblock %}
 
-			</div>
-			<div class="content-wrap"></div>
-			<div class="page-footer">
-				{% include 'Layout/footer.html.twig' %}
-			</div>
+		</div>
 
-		</body>
+		<div class="content-wrap"></div>
+		<div class="page-footer">
+			{% include 'Layout/footer.html.twig' %}
+		</div>
 
-	</html>
+	</body>
+
+</html>

@@ -53,21 +53,28 @@ class PortfolioController extends AbstractController
         ]);
     }
 
-    // 修改
+    // 修改   '/{id}/edit'->parametre url
     #[Route('/{id}/edit', name: '.edit', methods: ['GET', 'POST'])]
+    // soit nul soit une entity de portfolio -> parametre converteur,si il a trouve pas c'est nul
     public function edit(?portfolio $portfolio, Request $request): Response
     {
-        // On vérifie que l'portfolio est bien trouvé
+        // On vérifie que portfolio est bien trouvé
+        // instanceof -> ma variable est ce que instance de la portfolio
         if (!$portfolio instanceof Portfolio) {
             $this->addFlash('error', 'portfolio non trouvé');
 
-            return $this->redirectToRoute('admin.articles.index');
+            return $this->redirectToRoute('admin.portfolios.index');
         }
 
+        // namespace entirer et le clss entier 
         $form = $this->createForm(PortfolioType::class, $portfolio);
+        // toute la requet http de navigateur ->verifier le formulaire etait soumise
         $form->handleRequest($request);
 
+        // validation
+        // if formulaire soumis et valide 
         if ($form->isSubmitted() && $form->isValid()) {
+            // envoyer portfolio a base de donnee 
             $this->portfolioRepo->save($portfolio);
 
             $this->addFlash('success', 'portfolio mis à jour avec succès');
@@ -81,17 +88,25 @@ class PortfolioController extends AbstractController
     }
 
     // 删除
+    //RedirectResponse-> supprimer le portfolio directe ,n'y a pas de page  -> une redirect 
+    // pas de id car recuperer dans le form 
+    // que le post ,pas envie les autres recuperer 
     #[Route('/delete', name: '.delete', methods: ['POST'])]
     public function delete(Request $request): RedirectResponse
     {
+        //1. trouver id 
+        // request recupere l'id ->post 
+        // soit trouver soit 0 ,get(if faut nombre entrier )
         $portfolio = $this->portfolioRepo->find($request->get('id', 0));
 
+        // 2.est ce aue instance dans le portfolio 
         if (!$portfolio instanceof Portfolio) {
             $this->addFlash('error', 'portfolio non trouvé');
 
             return $this->redirectToRoute('admin.articles.index', [], 404);
         }
 
+        // 3.verifier le token 
         if ($this->isCsrfTokenValid('delete' . $portfolio->getId(), $request->get('token'))) {
             $this->portfolioRepo->remove($portfolio);
 
@@ -100,6 +115,7 @@ class PortfolioController extends AbstractController
             return $this->redirectToRoute('admin.portfolios.index');
         }
 
+        // si vient de cette etap -> ni id ni produit ni token 
         $this->addFlash('error', 'Token invalid');
 
         return $this->redirectToRoute('admin.portfolios.index');
