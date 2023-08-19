@@ -9,9 +9,10 @@
     margin: 2em;
     margin-top: 5em;
   }
-  .card-portfolio:hover {
-    transform: translateY(-5px);
-}
+//   .card-portfolio:hover {
+//     transform: translateY(-5px);
+
+// }
   .card-portfolio img {
     width: 100%;
     height: auto;
@@ -29,5 +30,9 @@
   .card-body {
     text-align: center;
   }
+  .card-body  h1{
+    margin-top: 1em;
+  }
+  
   
  

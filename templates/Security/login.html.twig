@@ -6,7 +6,6 @@
 {% endblock %}
 
 {% block body %}
-	{% include 'Layout/header.html.twig' %}
 	<form action="{{ path('app.login') }}" method="post" class="card">
 		{% if error %}
 			<div class="alert alert-danger" role="alert">

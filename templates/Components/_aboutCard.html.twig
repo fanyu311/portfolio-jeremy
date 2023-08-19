@@ -1,4 +1,12 @@
 <div class="card-about">
+	<div class="card-header">
+		<div class="titre-header">
+			<h1>Qui je suis ?
+			</h1>
+		</div>
+
+		{# <a href="{{ path('admin.about.create') }}" class="a-btn">Create  present</a> #}
+	</div>
 
 	<img src="{{ vich_uploader_asset(present, 'image')}}" alt="photo">
 
@@ -14,4 +22,5 @@
 			{% include 'Backend/About/_deleteForm.html.twig' %}
 		</div>
 	{% endif %}
+
 </div>

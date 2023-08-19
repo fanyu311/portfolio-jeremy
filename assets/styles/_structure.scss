@@ -1,7 +1,7 @@
 // 基本网页样式
-
-@import url('https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&family=Roboto:ital,wght@1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Angkor&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -107,9 +107,12 @@ pre {
   justify-items: center;
   align-items: center;
   margin: 2em 0;
+ 
 }
+
 .titre h1 {
   margin: 1em 0;
+  color: #1e1c1c;
 }
 
 /********** NAVBAR ****************/
@@ -127,10 +130,13 @@ pre {
   height: 110px;
   position: sticky;
   top: 0;
+  background: #f3f3f3;
+  opacity: 0.8;
+  
 }
 .navbar a {
     margin-top: 3em;
-    color: rgb(208, 201, 201);
+    color: rgb(70, 63, 63);
     font-family: 'Angkor', sans-serif;
     height: 2em;
     &:hover {
@@ -140,7 +146,8 @@ pre {
 
 .name {
   font-size: 3.5em;
-  font-family: 'Annie Use Your Telescope', sans-serif;
+  font-family: 'Great Vibes', sans-serif;
+  font-weight: 700;
 }
 
 
@@ -303,4 +310,6 @@ pre {
 .create-btn {
     align-items: center;
 }
+
+
 
