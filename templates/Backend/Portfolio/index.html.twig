@@ -23,11 +23,10 @@
 			<a href="{{ path('admin.portfolios.create') }}" class="a-btn">Créer un photo</a>
 		</div>
 
-		<div>
+		<div class="card-portfolio-list">
 			{% for portfolio in portfolios %}
 				{% include 'Components/_portfolioCard.html.twig' %}
 			{% endfor %}
-
 		</div>
 	</section>
 {% endblock %}

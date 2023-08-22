@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Listener;
+namespace App\src\Listener;
 
 use Exception;
 use App\Entity\Portfolio;
@@ -22,7 +22,7 @@ class ArticleImageListener
     public function preUpdate(Portfolio $portfolio, PreUpdateEventArgs $event): void
     {
         if ($event->hasChangedField('title')) {
-            foreach ($portfolio->getImages() as $image) {
+            foreach ($portfolio->getImage() as $image) {
                 if (!$image->getImage()) {
                     $path = $this->kernel->getProjectDir()
                         . '/public/images/portfolios/'

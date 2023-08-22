@@ -2,12 +2,12 @@
 
 
 	<a class="nav-link{{app.request.get('_route') == 'app.homepage'?'active'}}" href="{{ path('app.homepage')}}">ACCUEIL</a>
-	<a class="nav-link{{ app.request.get('_route') == 'app.portfolios.index' ? 'active' }}" href="{{ path('admin.portfolios.index')}}">PORTFOLIO</a>
+	<a class="nav-link{{ app.request.get('_route') == 'app.portfolios.index' ? 'active' }}" href="{{ path('app.portfolios.index')}}">PORTFOLIO</a>
 	<a href="{{ path('app.homepage') }}">
 		<p class="name">Jeremy</p>
 	</a>
-	<a class="nav-link{{ app.request.get('_route') == 'app.about.index' ? 'active' }}" href="{{ path('admin.about.index')}}">ABOUT</a>
-	<a class=" nav-link {{ app.request.get('_route') == 'app.contact.index' ? 'active' }} " href=" {{ path('admin.contact.index')}} ">CONTACT</a>
+	<a class="nav-link{{ app.request.get('_route') == 'app.about.index' ? 'active' }}" href="{{ path('app.about.index')}}">ABOUT</a>
+	<a class=" nav-link {{ app.request.get('_route') == 'app.contact.index' ? 'active' }} " href=" {{ path('app.contact.index')}} ">CONTACT</a>
 
 
 	{% if is_granted('ROLE_ADMIN') %}

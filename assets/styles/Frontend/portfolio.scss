@@ -1,0 +1,30 @@
+
+
+.portfolio-app  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: top / cover url("../../images/about-4.jpg");
+    width: 100%;
+    height: calc(100vh - 70px); 
+    // filter: blur(0.5px);
+    box-shadow: 0 0 5px 5px #ccddf1;
+   
+}
+
+
+.portfolio-app h1 {
+    margin-top: 3em;
+    width: 100%;
+    color: rgb(153, 60, 32);
+    font-size: 2.5em;
+    font-family: "Itim", sans-serif;
+    text-align: center;
+    padding: 1em;
+}
+.portfolio-app p {
+    width: 60%;
+    text-align: center;
+    margin-top: 1.5em;
+    color: rgb(58, 53, 53);
+}

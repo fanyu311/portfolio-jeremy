@@ -1,3 +1,9 @@
+.card-portfolio-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
 .card-portfolio{
     display: inline-block;
     width: calc(32% - 3em);
