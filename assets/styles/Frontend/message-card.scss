@@ -3,14 +3,18 @@
     flex-direction: column;
     align-items: center;
     text-align: justify;
+    
     background: bottom / cover url("../../images/contact.jpg");
     height: calc(120vh - 35px);
     color: white;
+   
+    
     
 }
 .message-card input,
 .message-card textarea{
     opacity: 0.8;
+   
 }
 .message-card h1 {
     padding: 1em;

@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: top / cover url("../../images/about-4.jpg");
+    background: top / cover url("../../images/about-5.jpg");
     width: 100%;
     height: calc(100vh - 70px); 
     // filter: blur(0.5px);
@@ -14,17 +14,18 @@
 
 
 .portfolio-app h1 {
-    margin-top: 3em;
-    width: 100%;
-    color: rgb(153, 60, 32);
+    margin-top: 5em;
+    width: 50%;
+    background: rgb(78, 78, 86);
+    color: rgb(223, 202, 195);
     font-size: 2.5em;
     font-family: "Itim", sans-serif;
     text-align: center;
-    padding: 1em;
+  
 }
 .portfolio-app p {
+    margin-top: 3.5em;
     width: 60%;
     text-align: center;
-    margin-top: 1.5em;
     color: rgb(58, 53, 53);
 }

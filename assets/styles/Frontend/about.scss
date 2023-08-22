@@ -7,7 +7,7 @@
     align-items: center;
     text-align: center;
     margin-bottom: 3em;
-  
+    
 }
 .card-header{
     background: top / cover url("../../images/about-3.jpg");
@@ -22,6 +22,14 @@
             font-size: 80px;
             font-weight: 500;
             font-family: "Quicksand", sans-serif;
+        }
+        header-line,h1 {
+            padding-top: 0.5em;
+        }
+        p {
+            padding-top: 4em;
+            font-size: 20px;
+            color: #5d5353;
         }
     }
 
@@ -48,4 +56,23 @@
     margin-top: 1em;
     text-align: justify;
 }
-
+.header-line
+{
+    width:400px;
+    height:36px;
+    line-height:36px;
+    text-align:center;
+}
+.line
+{
+    display:inline-block;
+    width:100px;
+    border-top:1px solid #635c5c;
+    // 设置元素的垂直对齐方式
+    vertical-align:5px; 
+    margin: 0 1em;
+}
+.header-text {
+    font-size: 20px;
+    font-weight: 500;
+}
