@@ -6,6 +6,9 @@ use App\Entity\Contact;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 class ContactType extends AbstractType
 {
@@ -34,12 +37,13 @@ class ContactType extends AbstractType
                 'required' => true
             ])
             ->add('message', TextareaType::class, [
-                'label' => 'Present:',
+                'label' => 'Message:',
                 'required' => true,
                 'sanitize_html' => true,
                 'attr' => [
                     'placeholder' => 'Ce que vous voulez me dire ...',
-                    'rows' => 20,
+                    'rows' => 10,
+                    'cols' => 70
                 ]
             ]);
     }

@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Validation
+	{{ parent() }}
+{% endblock %}
+{% block stylesheets %}
+	{{ parent() }}
+	{{ encore_entry_link_tags('app') }}
+{% endblock %}
+
+{% block javascripts %}
+	{{ parent() }}
+	{{ encore_entry_script_tags('app') }}
+{% endblock %}
+{% block body %}
+
+	{% include 'Components/_validationCard.html.twig' %}
+{% endblock %}

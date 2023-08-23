@@ -1,5 +1,7 @@
 // Import admin design
 import './styles/Backend/admin.scss';
 
-// import js 
-import './js/addCollectionInput.js';
+
+
+//import zoomImage
+import './js/zoomImage.js';

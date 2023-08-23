@@ -1,6 +1,6 @@
 <?php
 
-namespace App\src\Listener;
+namespace App\Listener;
 
 use Exception;
 use App\Entity\Portfolio;
@@ -12,7 +12,7 @@ use Doctrine\Bundle\DoctrineBundle\Attribute\AsEntityListener;
 
 #[AsEntityListener(event: Events::preUpdate, method: 'preUpdate', entity: Portfolio::class)]
 #[AsEntityListener(event: Events::postRemove, method: 'postRemove', entity: Portfolio::class)]
-class ArticleImageListener
+class PortfolioImageListener
 {
     public function __construct(
         private KernelInterface $kernel

@@ -1,15 +1,18 @@
 <div class="card-portfolio">
-
-	<img src="{{ vich_uploader_asset(portfolio, 'image')}}" alt="">
-
+	<img src="{{ vich_uploader_asset(portfolio, 'image')}}" alt="photo" class="photo">
+	<div class="modal">
+		<div class="modal-wrapper">
+			<img src="{{ vich_uploader_asset(portfolio, 'image')}}" alt="photo">
+		</div>
+	</div>
 	<div class="card-body">
 		<h1>{{ portfolio.title}}</h1>
-		<p class="blog-card-content-date">
+		<p>
 			<i class="bi bi-calendar-heart"></i>
 			{{ portfolio.createdAt|format_datetime('full', 'none') }}
 		</p>
 
-		<p class="blog-card-content-desc">{{ portfolio.content|slice(0, 150)|sanitize_html|striptags }}...</p>
+		<p>{{ portfolio.content|slice(0, 150)|sanitize_html|striptags }}</p>
 
 	</div>
 

@@ -1,23 +1,27 @@
 <div class="message-card">
-	{{ form_start(form, {'attr': {'class': 'form'}}) }}
+	{{ form_start(form) }}
 	<h1>Contact
 	</h1>
 	<div class="card-form">
-		<p>Nom<span>*</span>
-		</p>
 		<div class="fullname">
+
 			{{ form_row(form.firstName) }}
+
 			{{ form_row(form.lastName) }}
+
 
 		</div>
 		<div class="email">
+
 			{{ form_row(form.email) }}
 		</div>
 		<div class="message">
+
 			{{ form_row(form.message) }}
 		</div>
 	</div>
 	{# <button class="btn btn-contact" type="submit">Envoyer</button> #}
-	<a href="{{ path('app.contact.validation') }}" class="a-btn">Envoyer</a>
+	<button class="c-btn" type="submit">Envoyer</button>
 
+	{{ form_end(form) }}
 </div>

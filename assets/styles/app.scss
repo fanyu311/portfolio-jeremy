@@ -13,10 +13,11 @@
 @import "./_mixins.scss";
 
 
-
-
 //import body
 @import "./Frontend/body.scss";
+
+// Import modal
+@import "./Layout/modal.scss";
 
 //import card
 @import "./Frontend/card.scss";
@@ -28,4 +29,9 @@
 @import "./Frontend/message-card.scss";
 
 // import portfolio app
-@import "./Frontend/portfolio.scss"
+@import "./Frontend/portfolio.scss";
+
+// import validation
+@import "./Frontend/validation.scss"
+
+

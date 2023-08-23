@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-	Admin About
+	About
 	{{ parent() }}
 {% endblock %}
 
@@ -15,8 +15,9 @@
 	{{ encore_entry_script_tags('app') }}
 {% endblock %}
 {% block body %}
-
-	{% include 'Components/_aboutCardFronend.html.twig' %}
+	{% for present in about %}
+		{% include 'Components/_aboutCard.html.twig' %}
+	{% endfor %}
 
 
 {% endblock %}
