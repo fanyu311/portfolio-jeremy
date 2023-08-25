@@ -14,7 +14,7 @@ class MainControllerPhpController extends AbstractController
     public function index(PortfolioRepository $portfolioRepo): Response
     {
         return $this->render('Frontend/Home/index.html.twig', [
-            'portfolio' => $portfolioRepo->findAllWithRelationInfo(),
+            'portfolios' => $portfolioRepo->findlastImage(5),
         ]);
     }
 }

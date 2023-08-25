@@ -41,14 +41,16 @@ class PortfolioImageListener
                 }
             }
 
-            $dir = substr($path, 0, strrpos($path, '/'));
-            $restFiles = glob("$dir/*");
+            if (!empty($path)) {
+                $dir = substr($path, 0, strrpos($path, '/'));
+                $restFiles = glob("$dir/*");
 
-            foreach ($restFiles as $file) {
-                unlink($file);
+                foreach ($restFiles as $file) {
+                    unlink($file);
+                }
+
+                rmdir($dir);
             }
-
-            rmdir($dir);
         }
     }
 

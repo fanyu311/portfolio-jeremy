@@ -52,6 +52,26 @@ class PortfolioRepository extends ServiceEntityRepository
             ->getResult();
     }
 
+
+    /**
+     * find last image
+     *
+     * @param integer $limit
+     * @return array
+     */
+    public function findlastImage(int $limit): array
+    {
+        $query = $this->createQueryBuilder('p')
+            ->select('p', 'u')
+            ->innerJoin('p.user', 'u');
+
+        return $query
+            ->orderBy('p.createdAt', 'DESC')
+            ->groupBy('p')
+            ->setMaxResults($limit)
+            ->getQuery()
+            ->getResult();
+    }
     //    /**
     //     * @return Portfolio[] Returns an array of Portfolio objects
     //     */

@@ -12,5 +12,8 @@ import './styles/app.scss';
 //import zoomImage
 import './js/zoomImage.js';
 
+// import homeImage
+import './js/homeImage.js';
+
 
 
