@@ -118,7 +118,7 @@ pre {
 
 /********** NAVBAR ****************/
 
-.navbar {
+.navbar-links {
   // width: 100%;
   // height: 112px;
   // display: flex;
@@ -128,14 +128,18 @@ pre {
   // font-family: 'Dancing Script', sans-serif;
   display: flex;
   justify-content: space-around;
+  align-items: center;
   height: 110px;
   position: sticky;
   top: 0;
   background: #f3f3f3;
   opacity: 0.8;
   z-index: 9999;
-  
+
+ 
 }
+
+
 .navbar a {
     margin-top: 3em;
     color: rgb(70, 63, 63);
@@ -150,6 +154,30 @@ pre {
   font-size: 3.5em;
   font-family: 'Great Vibes', sans-serif;
   font-weight: 700;
+}
+
+@media screen and (max-width: 768px){
+  .navbar-content {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: space-between;
+   color: #FFF;
+   height: 50px;
+   padding: 1em;
+  }
+  .navbar-links {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  .navbar-links > li {
+    margin: 0 1rem;
+    overflow: hidden;
+  }
+
 }
 
 

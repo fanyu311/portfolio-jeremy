@@ -8,13 +8,13 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 
-class MainControllerPhpController extends AbstractController
+class MainController extends AbstractController
 {
     #[Route('', name: 'app.homepage', methods: ['GET'])]
     public function index(PortfolioRepository $portfolioRepo): Response
     {
         return $this->render('Frontend/Home/index.html.twig', [
-            'portfolios' => $portfolioRepo->findlastImage(5),
+            'portfolios' => $portfolioRepo->findlastImage(7),
         ]);
     }
 }

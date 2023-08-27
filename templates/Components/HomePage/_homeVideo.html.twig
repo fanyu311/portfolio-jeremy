@@ -1,0 +1,10 @@
+<div class="home-video">
+
+	{% for portfolio in portfolios %}
+		{% if '.mp4' in  portfolio.imageName %}
+			<video loop autoplay muted class="photo">
+				<source src="{{ vich_uploader_asset(portfolio, 'image')}}">
+			</video>
+		{% endif %}
+	{% endfor %}
+</div>

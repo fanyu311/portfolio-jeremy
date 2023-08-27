@@ -1,8 +1,21 @@
 <div class="card-portfolio">
-	<img src="{{ vich_uploader_asset(portfolio, 'image')}}" alt="photo" class="photo">
+	{% if '.mp4' in  portfolio.imageName %}
+		<video loop autoplay muted class="photo">
+			<source src="{{ vich_uploader_asset(portfolio, 'image')}}">
+		</video>
+	{% else %}
+		<img src="{{ vich_uploader_asset(portfolio, 'image')}}" alt="photo" class="photo">
+	{% endif %}
+
 	<div class="modal">
 		<div class="modal-wrapper">
-			<img src="{{ vich_uploader_asset(portfolio, 'image')}}" alt="photo">
+			{% if '.mp4' in  portfolio.imageName %}
+				<video loop autoplay muted class="photo">
+					<source src="{{ vich_uploader_asset(portfolio, 'image')}}">
+				</video>
+			{% else %}
+				<img src="{{ vich_uploader_asset(portfolio, 'image')}}" alt="photo">
+			{% endif %}
 		</div>
 	</div>
 	<div class="card-body">

@@ -1,19 +1,17 @@
 <div class="image-body">
 	<div class="image-container">
 		{% for photo in portfolios %}
-			<div class="item active" style="background-image: url('{{ vich_uploader_asset(photo)}}')">
-				<div class="shadow"></div>
-				<div class="image-content">
-					<div class="text">
-						<div class="title">{{ photo.title}}</div>
-						<div class="sub">{{ photo.content}}</div>
+			{% if '.mp4' not in photo.imageName %}
+				<div class="item active" style="background-image: url('{{ vich_uploader_asset(photo)}}')">
+					<div class="shadow"></div>
+					<div class="image-content">
+						<div class="text">
+							<div class="title">{{ photo.title}}</div>
+							{# <div class="sub">{{ photo.content}}</div> #}
+						</div>
 					</div>
 				</div>
-
-
-			</div>
-
-
+			{% endif %}
 		{% endfor %}
 	</div>
 
