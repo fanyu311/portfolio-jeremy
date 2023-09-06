@@ -117,26 +117,26 @@ pre {
 }
 
 /********** NAVBAR ****************/
-
-.navbar-links {
-  // width: 100%;
-  // height: 112px;
-  // display: flex;
-  // justify-content: space-around;
-  // height: calc(120vh - 112px);
-  // background: top / cover url('../images/banner.jpg');
-  // font-family: 'Dancing Script', sans-serif;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  height: 110px;
+.navbar {
   position: sticky;
   top: 0;
+  z-index: 9999;
+  
+}
+.navbar-links {
+  width: 100%;
+  height: 112px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  // height: calc(120vh - 112px);
+  // background: top / cover url('../images/banner.jpg');
+  align-items: center ;
+  text-align: center;
+  font-family: 'Dancing Script', sans-serif;
   background: #f3f3f3;
   opacity: 0.8;
-  z-index: 9999;
-
- 
+  gap: 5em; 
 }
 
 
@@ -145,6 +145,7 @@ pre {
     color: rgb(70, 63, 63);
     font-family: 'Angkor', sans-serif;
     height: 2em;
+    transition: all 0.3s ease;
     &:hover {
       color: $secondary;
     }
@@ -156,27 +157,119 @@ pre {
   font-weight: 700;
 }
 
-@media screen and (max-width: 768px){
+ /* hide responsive menu */
+
+
+ .navbar-burger {
+  display: inline-block;
+  width: 40px;
+  height: 3px;
+  background: rgb(79, 76, 70);
+  border-radius: var(--border-radius);
+  position: relative;
+  transition: all .4s ease;
+}
+.navbar-burger::before,
+.navbar-burger::after {
+    content: "";
+    display: inline-block;
+    width: 40px;
+    height: 3px;
+    background: rgb(79, 76, 70);
+    border-radius: $border-radius;
+    position: absolute;
+    transition: all .4s ease;
+}
+
+.navbar-burger::before {
+    top: -8px;
+}
+
+.navbar-burger::after {
+    top: 8px;
+}
+.link-burger.open .navbar-burger {
+  background: transparent;
+}
+
+.link-burger.open .navbar-burger::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.link-burger.open .navbar-burger::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+.navbar-menu {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+.navbar-menu {
+  display: block;
+  margin-top: -1.3em;
+}
   .navbar-content {
-   display: flex;
-   flex-direction: row;
-   align-items: center;
-   justify-content: space-between;
-   color: #FFF;
-   height: 50px;
-   padding: 1em;
-  }
-  .navbar-links {
-    display: flex;
-    flex-direction: row;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
-  .navbar-links > li {
-    margin: 0 1rem;
-    overflow: hidden;
-  }
+    display: none;
+}
+.navbar-menu a {
+  color: #6c716b;
+}
+.menu-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center ;
+  background-color: #f3f3f3;
+  opacity: 0.8;
+}
+.menu-container a {
+  margin-top: 2.4em;
+}
+// .navbar-burger{
+//   margin-top: 3em;
+// }
+
+.link-burger {
+  display: inline-block;
+}
+
+.menu-logo {
+  font-size: 1.5em;
+  
+}
+
+.menu-roulent ul {
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: rgb(62, 52, 52);
+  color: rgb(247, 242, 242);
+  gap: 0;
+  transform: scaleY(0);
+  transform-origin: top center;
+  transition: transform .4s ease;
+}
+.menu-roulent a {
+  color: #f3f3f3;
+}
+
+.menu-roulent ul li {
+  width: 100%;
+  text-align: center;
+  padding: 1em 0;
+}
+
+.menu-roulent ul li:not(:first-of-type) {
+  border-top: 1px solid white;
+}
+
+.menu-roulent ul.open {
+  transform: scaleY(1);
+}
+ 
 
 }
 
@@ -260,6 +353,16 @@ pre {
     background-color: #575C56;
     color: white;
   }
+
+  @media screen and (max-width: 768px) {
+    .container {
+      width: 366px;
+    }
+    .kpxc-username-icon.disconnected{
+      margin-top: 1.2em;
+    }
+    
+  }
   
   /************************FOOTER************************/
   .footer{
@@ -309,6 +412,24 @@ pre {
   .footer p ,
   .footer a {
     color: #575C56;
+  }
+
+  @media screen and (max-width: 768px) {
+
+    /* hide classic menu */
+    .footer {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        
+    }
+  
+  }
+
+  @media screen and (max-width: 768px) {
+    .footer {
+      margin-top: 2em;
+    }
   }
 /*************CREATE PHOTO****************/
 .create {

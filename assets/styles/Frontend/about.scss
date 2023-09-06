@@ -14,6 +14,7 @@
     width: 100%;
     height: calc(100vh - 70px);
     @include flexbox(center, "no-wrap", center);
+    margin-top: -7em;
 }
 .titre-header{
      
@@ -75,4 +76,20 @@
 .header-text {
     font-size: 20px;
     font-weight: 500;
+}
+
+@media screen and (max-width: 768px)  {
+   
+    .titre-header h1{
+        font-size: 3em;
+        margin-top: 1.2em;
+    }
+    .titre-header p{
+        color: rgb(237, 228, 228);
+    }
+    .card-about img {
+        width: 300px;
+        height: 220px;
+
+    }
 }

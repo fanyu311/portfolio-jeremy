@@ -1,7 +1,10 @@
 <header class="navbar">
-	<nav class="navbar-content">
 
-		<ul class="navbar-links">
+	<div
+		class="navbar-content">
+
+		{# classic menu #}
+		<ul class="navbar-links" role="navigation">
 			<li>
 				<a class="nav-link{{app.request.get('_route') == 'app.homepage'?'active'}}" href="{{ path('app.homepage')}}">ACCUEIL</a>
 			</li>
@@ -19,12 +22,36 @@
 			<li>
 				<a class=" nav-link {{ app.request.get('_route') == 'app.contact.index' ? 'active' }} " href=" {{ path('app.contact.index')}} ">CONTACT</a>
 			</li>
+			<li>
+				{% if is_granted('ROLE_ADMIN') %}
+					<a href="{{ path('app.logout') }}" class="btn">Se deconnecter</a>
+				{% endif %}
+			</li>
 		</ul>
+	</div>
+	<!-- Responsive Menu -->
+	<div class="navbar-menu">
+		<div class="menu-container">
 
-	</nav>
+			<a href="{{path('app.homepage')}}" class="menu-logo">Jeremy</a>
 
 
-	{% if is_granted('ROLE_ADMIN') %}
-		<a href="{{ path('app.logout') }}" class="btn">Se deconnecter</a>
-	{% endif %}
+			<div class="menu-roulent">
+				<a class="link-burger">
+					<span class="navbar-burger"></span>
+				</a>
+				<ul>
+
+					<li><a class="nav-link{{app.request.get('_route') == 'app.homepage'?'active'}}"href="{{ path('app.homepage')}}">ACCUEIL</a></li>
+					<li><a class="nav-link{{ app.request.get('_route') == 'app.portfolios.index' ? 'active' }}"href="{{ path('app.portfolios.index')}}">PORTFOLIO</a></li>
+					<li><a class="nav-link{{ app.request.get('_route') == 'app.about.index' ? 'active' }}"href="{{ path('app.about.index')}}">ABOUT</a></li>
+					<li><a class=" nav-link {{ app.request.get('_route') == 'app.contact.index' ? 'active' }} " href=" {{ path('app.contact.index')}} ">CONTACT</a></li>
+				</ul>
+			</div>
+		</div>
+
+
+	</div>
+
+
 </header>

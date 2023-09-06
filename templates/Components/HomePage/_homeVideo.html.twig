@@ -1,10 +1,26 @@
 <div class="home-video">
+	<div class="video-left">
+		<h2>
+			<a href="{{ path('app.about.index')}}">
+				Qui je suis ?
+			</a>
+		</h2>
+		<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem nisi magnam quibusdam ullam, illum eius quas reiciendis, expedita aperiam totam voluptatibus sapiente at praesentium, quisquam laborum mollitia ratione enim natus.Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+																																																		Rem nisi magnam quibusdam ullam, illum eius quas reiciendis, expedita aperiam totam voluptatibus sapiente at praesentium, quisquam laborum mollitia ratione enim natus.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem nisi magnam quibusdam ullam, illum eius quas reiciendis, expedita aperiam totam voluptatibus sapiente at praesentium, quisquam laborum mollitia ratione enim natus.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem nisi magnam quibusdam ullam, illum eius quas expedita aperiam totam voluptatibus sapiente at praesentium, quisquam laborum mollitia ratione enim natus.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem nisi magnam quibusdam ullam, illum eius quas
+		</p>
+	</div>
+	<div class="video-right">
 
-	{% for portfolio in portfolios %}
-		{% if '.mp4' in  portfolio.imageName %}
-			<video loop autoplay muted class="photo">
-				<source src="{{ vich_uploader_asset(portfolio, 'image')}}">
-			</video>
-		{% endif %}
-	{% endfor %}
+
+		{% for portfolio in portfolios %}
+			{% if '.mp4' in  portfolio.imageName %}
+				<video loop autoplay muted class="photo">
+					<source src="{{ vich_uploader_asset(portfolio, 'image')}}">
+				</video>
+			{% endif %}
+		{% endfor %}
+
+	</div>
+
+
 </div>

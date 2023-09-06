@@ -15,5 +15,14 @@ import './js/zoomImage.js';
 // import homeImage
 import './js/homeImage.js';
 
+// import menuBureger
+import './js/menuBurger.js';
+
+// import menuBureger
+import './js/swiperHome.js';
+
+
+
+
 
 

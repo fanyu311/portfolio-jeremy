@@ -19,7 +19,8 @@ class Contact
     #[ORM\Column(length: 255)]
     private ?string $lastName = null;
 
-    #[ORM\Column(length: 255, unique: true)]
+    #[ORM\Column(length: 255)]
+    // unique--> 
     private ?string $email = null;
 
     #[ORM\Column(length: 255)]

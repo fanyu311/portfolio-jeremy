@@ -6,9 +6,15 @@
 {% endblock %}
 
 {% block body %}
+	<div class="home-app">
+		<h1>PHOTOGRAPHE PROFESSIONNEL</h1>
+		<p>Confiez votre projet à un photographe passionné et créatif qui le mènera à bien dans les moindres détails.</p>
+		<div class="home-app-overlay"></div>
+	</div>
 
-	{% include 'Components/HomePage/_homeVideo.html.twig' %}
 	{% include 'Components/HomePage/_homeText.html.twig' %}
+	<hr class="separer">
+	{% include 'Components/HomePage/_homeVideo.html.twig' %}
 
-
+	<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-element-bundle.min.js"></script>
 {% endblock %}
