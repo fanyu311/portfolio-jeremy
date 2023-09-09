@@ -57,7 +57,7 @@
     align-items: center;
     text-align: center;
     background: bottom / cover url("../../images/contact.jpg");
-    height: calc(150vh - 30px);
+    height: calc(130vh - 70px);
     color: white;
     margin-top: -7em;
     
@@ -99,10 +99,12 @@
         margin-bottom: 1em;
         opacity: 0.8;
         
+       
     }
     .card-form {
         margin-top: 2em;
     }
+    
 }
 
 

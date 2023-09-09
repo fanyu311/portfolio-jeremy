@@ -40,12 +40,16 @@
         font-size: 1.2em;
         background: none;
         color: rgb(152, 132, 132);
+        text-align: center;
+        width: 60%;
+        margin-top: 10em;
     }
     .portfolio-app p{
         width: 90%;
         color: rgb(244, 243, 241);
         margin-top: 2em;
         line-height: 1.4em;
+        
     }
     .portfolio-app-overlay{
         
@@ -60,7 +64,7 @@
     .card-portfolio-list {
         display: flex;
         flex-direction: column;
-        
+        padding-bottom: 3em;
     }
     
 }
