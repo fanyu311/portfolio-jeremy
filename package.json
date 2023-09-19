@@ -20,11 +20,11 @@
         "dev": "encore dev",
         "watch": "encore dev --watch",
         "build": "echo This is a static template, there is no bundler or bundling involved!",
-    "start": "serve"
+        "start": "serve"
     },
     "dependencies": {
+        "aos": "^2.3.4",
         "bootstrap-icons": "^1.10.5",
         "swiper": "^10.2.0"
     }
-  
 }
