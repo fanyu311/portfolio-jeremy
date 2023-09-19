@@ -166,7 +166,6 @@
     justify-content: center;
     align-items: center;
     gap: 4em;
-   
     
 }
 .home-video-text {
@@ -186,7 +185,9 @@
     text-align: center;
     margin: 1em 0;
 }
-
+.video-left h2 a {
+    color: #7a7171;
+}
 .video-left a:hover {
    color: $secondary;
 }
@@ -288,7 +289,7 @@
         }
         p {
             padding-bottom: 3em;
-        
+            margin-left: -0.5em;
         }
       }
       .home-right {
@@ -335,6 +336,7 @@
             height: 100%;
             object-fit: cover;
             object-position: center;
+            margin-top: 4em;
         }
     
       

@@ -1,4 +1,4 @@
-<div class="card-portfolio">
+<div class="card-portfolio hover">
 	{% if '.mp4' in  portfolio.imageName %}
 		<video loop autoplay muted class="photo">
 			<source src="{{ vich_uploader_asset(portfolio, 'image')}}">
@@ -14,7 +14,7 @@
 					<source src="{{ vich_uploader_asset(portfolio, 'image')}}">
 				</video>
 			{% else %}
-				<img src="{{ vich_uploader_asset(portfolio, 'image')}}" alt="photo">
+				<img src="{{ vich_uploader_asset(portfolio, 'image')}}" alt="photo" class="zoomphoto">
 			{% endif %}
 		</div>
 	</div>
