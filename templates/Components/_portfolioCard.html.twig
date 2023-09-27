@@ -1,4 +1,4 @@
-<div class="card-portfolio">
+<div class="card-portfolio hover">
 	{% if '.mp4' in  portfolio.imageName %}
 		<video loop autoplay muted class="photo">
 			<source src="{{ vich_uploader_asset(portfolio, 'image')}}">
@@ -14,18 +14,18 @@
 					<source src="{{ vich_uploader_asset(portfolio, 'image')}}">
 				</video>
 			{% else %}
-				<img src="{{ vich_uploader_asset(portfolio, 'image')}}" alt="photo">
+				<img src="{{ vich_uploader_asset(portfolio, 'image')}}" alt="photo" class="zoomphoto">
 			{% endif %}
 		</div>
 	</div>
 	<div class="card-body">
-		<h1>{{ portfolio.title}}</h1>
+		<h1>{{ portfolio.title|sanitize_html}}</h1>
 		<p>
 			<i class="bi bi-calendar-heart"></i>
 			{{ portfolio.createdAt|format_datetime('full', 'none') }}
 		</p>
 
-		<p>{{ portfolio.content|slice(0, 150)|sanitize_html|striptags }}</p>
+		<p>{{ portfolio.content|slice(0, 400)|sanitize_html}}</p>
 
 	</div>
 

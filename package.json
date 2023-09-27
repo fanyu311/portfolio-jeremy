@@ -19,9 +19,12 @@
         "dev-server": "encore dev-server",
         "dev": "encore dev",
         "watch": "encore dev --watch",
-        "build": "encore production --progress"
+        "build": "echo This is a static template, there is no bundler or bundling involved!",
+        "start": "serve"
     },
     "dependencies": {
-        "bootstrap-icons": "^1.10.5"
+        "aos": "^2.3.4",
+        "bootstrap-icons": "^1.10.5",
+        "swiper": "^10.2.0"
     }
 }

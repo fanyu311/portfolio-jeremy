@@ -28,6 +28,14 @@
         transition: .3s ease-in;
         
     }
+    @media screen and (max-width: 768px) {
+        img{
+           
+                height: 70% !important;
+            
+            
+        }
+    }
     
     &.open {
        opacity: 1; 
@@ -49,7 +57,10 @@
         opacity:1;
         transform: scale(1);
     }
+    
 }
+
+
   
 @keyframes showModal {
 from {

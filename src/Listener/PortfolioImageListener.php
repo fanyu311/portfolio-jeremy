@@ -22,24 +22,24 @@ class PortfolioImageListener
     public function preUpdate(Portfolio $portfolio, PreUpdateEventArgs $event): void
     {
         if ($event->hasChangedField('title')) {
-            foreach ($portfolio->getImage() as $image) {
-                if (!$image->getImage()) {
-                    $path = $this->kernel->getProjectDir()
-                        . '/public/images/portfolios/'
-                        . $event->getEntityChangeSet()['slug'][0]
-                        . '/' . $image->getImageName();
+            // foreach ($portfolio->getImage() as $image) {
+            //     if (!$image->getImage()) {
+            //         $path = $this->kernel->getProjectDir()
+            //             . '/public/images/portfolios/'
+            //             . $event->getEntityChangeSet()['slug'][0]
+            //             . '/' . $image->getImageName();
 
-                    if (is_file($path)) {
-                        $image = new File($path);
+            //         if (is_file($path)) {
+            //             $image = new File($path);
 
-                        $image->move(
-                            $this->kernel->getProjectDir() . '/public/images/portfolios/' . $portfolio->getSlug()
-                        );
-                    } else {
-                        throw new Exception("Image: $path not found");
-                    }
-                }
-            }
+            //             $image->move(
+            //                 $this->kernel->getProjectDir() . '/public/images/portfolios/' . $portfolio->getSlug()
+            //             );
+            //         } else {
+            //             throw new Exception("Image: $path not found");
+            //         }
+            //     }
+            // }
 
             if (!empty($path)) {
                 $dir = substr($path, 0, strrpos($path, '/'));

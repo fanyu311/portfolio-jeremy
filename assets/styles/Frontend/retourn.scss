@@ -1,0 +1,52 @@
+.arrow {
+    width: 65px;
+    height: 65px;
+    border:3px solid #221f1f;
+    border-radius: 50px;
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   float: right;
+   margin-right: 1em;
+    margin-bottom: 3em;
+   
+}
+
+.arrow-up {
+        position: relative;
+        width: 15px;
+        height: 15px;
+        border-top: 5px solid #221f1f;
+        border-left: 5px solid #221f1f;
+        border-top: 5px solid #221f1f;
+        transform: rotate(45deg);
+        animation: arrow-load;
+        animation-duration: 1.8s;
+        animation-iteration-count: infinite ;
+        animation-direction: alternate;
+}
+.arrow-up:nth-child(3) {
+            animation-delay: 0;
+}
+.arrow-up:nth-child(2) {
+            animation-delay: .3s;
+}
+.arrow-up:nth-child(1) {
+    animation-delay: .6s;
+}
+
+
+
+@keyframes arrow-load {
+    0% {
+        opacity: 0;
+        // transform: rotate(45deg) translate(60px, 60px);
+    }
+  
+    100% {
+        opacity: 1;
+        // transform: rotate(45deg) translate(-60px, -60px);
+    }
+   }

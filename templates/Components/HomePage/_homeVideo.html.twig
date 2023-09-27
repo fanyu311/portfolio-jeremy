@@ -1,10 +1,26 @@
 <div class="home-video">
+	<div class="video-left" data-aos="zoom-in-right">
+		<h2>
+			<a href="{{ path('app.about.index')}}">
+				Qui je suis ?
+			</a>
+		</h2>
+		<p class="home-video-text">
+			Je m'appelle Jérémy et je suis un photographe amateur passionné dans différents domaines (automobile, paysage, animaux, etc.). J'ai découvert ma passion pour la photographie il y a quelques années et depuis, j'ai consacré beaucoup de temps à améliorer mes compétences et à explorer différents aspects de cet art captivant.
+		</p>
+	</div>
+	<div class="video-right">
 
-	{% for portfolio in portfolios %}
-		{% if '.mp4' in  portfolio.imageName %}
-			<video loop autoplay muted class="photo">
-				<source src="{{ vich_uploader_asset(portfolio, 'image')}}">
-			</video>
-		{% endif %}
-	{% endfor %}
+
+		{% for portfolio in portfolios %}
+			{% if '.mp4' in  portfolio.imageName %}
+				<video loop autoplay muted class="photo">
+					<source src="{{ vich_uploader_asset(portfolio, 'image')}}">
+				</video>
+			{% endif %}
+		{% endfor %}
+
+	</div>
+
+
 </div>

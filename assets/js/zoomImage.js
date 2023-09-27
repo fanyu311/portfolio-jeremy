@@ -11,7 +11,7 @@ images.forEach(image => {
     })
 })
 
-//open-close photo
+//closemodel
 function closeModal(e) {
     if (e.target.classList.contains('modal-wrapper')) {
         e.target.parentNode.classList.remove('open');
@@ -19,4 +19,11 @@ function closeModal(e) {
         e.target.classList.remove('open');
     }
     }
+// function hover() {
+//     const image = document.querySelector('.photo');
+//     const card = document.querySelector('.card-portfolio');
 
+//     card.addEventListener('click', () => {
+//         card.style.removeProperty('transation');
+//     })
+// }

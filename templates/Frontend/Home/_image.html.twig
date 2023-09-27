@@ -16,3 +16,18 @@
 	</div>
 
 </div>
+
+
+<div class="swiper banner-slider">
+
+	<div class="swiper-wrapper">
+		<hr>
+		{% for photo in portfolios %}
+			{% if '.mp4' not in photo.imageName %}
+				<div class="swiper-slide">
+					<img src="{{ vich_uploader_asset(photo) }}" alt="photo">
+				</div>
+			{% endif %}
+		{% endfor %}
+	</div>
+	<div class="swiper-pagination"></div>
