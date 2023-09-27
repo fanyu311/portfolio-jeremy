@@ -19,7 +19,7 @@
         "dev-server": "encore dev-server",
         "dev": "encore dev",
         "watch": "encore dev --watch",
-        "build": "echo This is a static template, there is no bundler or bundling involved!",
+        "build": "encore production --progress",
         "start": "serve"
     },
     "dependencies": {

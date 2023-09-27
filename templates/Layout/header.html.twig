@@ -5,6 +5,7 @@
 
 		{# classic menu #}
 		<ul class="navbar-links" role="navigation">
+
 			<li>
 				<a class="nav-link{{app.request.get('_route') == 'app.homepage'?'active'}}" href="{{ path('app.homepage')}}">ACCUEIL</a>
 			</li>
@@ -12,7 +13,7 @@
 				<a class="nav-link{{ app.request.get('_route') == 'app.portfolios.index' ? 'active' }}" href="{{ path('app.portfolios.index')}}">PORTFOLIO</a>
 			</li>
 			<li>
-				<a href="{{ path('app.homepage') }}">
+				<a href="{{ path('app.homepage') }}" class="flash">
 					<p class="name">Jeremy</p>
 				</a>
 			</li>
@@ -22,6 +23,8 @@
 			<li>
 				<a class=" nav-link {{ app.request.get('_route') == 'app.contact.index' ? 'active' }} " href=" {{ path('app.contact.index')}} ">CONTACT</a>
 			</li>
+
+
 			<li>
 				{% if is_granted('ROLE_ADMIN') %}
 					<a href="{{ path('app.logout') }}" class="btn">Se deconnecter</a>
