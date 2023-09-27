@@ -15,7 +15,7 @@ class AboutController extends AbstractController
     #[Route('', name: '.index', methods: ['GET'])]
     public function index(AboutRepository $aboutRepo): Response
     {
-        return $this->render('Frontend/About/index.html.twig', [
+        return $this->render('Frontend/about/index.html.twig', [
             'about' => $aboutRepo->findAll(),
         ]);
     }
