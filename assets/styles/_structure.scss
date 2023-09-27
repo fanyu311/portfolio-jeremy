@@ -137,6 +137,24 @@ pre {
   background: #f3f3f3;
   opacity: 0.8;
   gap: 5em; 
+
+}
+
+.flash {
+  color: black;
+  filter: blur(2px);
+  animation: animate 2.5s linear infinite;
+}
+@keyframes animate {
+  0%, 100% {
+      color: #fff;
+      filter: blur(2px);
+      text-shadow: 0 0 10px #1e90ff
+  }
+  5%,95% {
+      color: #111;
+      filter: blur(0px);
+  }
 }
 
 
