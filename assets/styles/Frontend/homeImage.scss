@@ -311,7 +311,7 @@
      
 }
 .swiper {
-    display: none;
+    display: none!important;
 }
 @media screen and (max-width: 768px){
     .image-container {
@@ -321,7 +321,7 @@
         margin-top: -51em;
     }
     .swiper {
-        display: block;
+        display: block!important;
         margin-top: -5em;
     }
     .swiper-wrapper{
