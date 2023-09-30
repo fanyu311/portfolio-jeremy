@@ -34,7 +34,7 @@
 .portfolio-app-overlay {
     display: none;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) and (min-width: 992px) {
     
     .portfolio-app h1{
         font-size: 1.2em;
