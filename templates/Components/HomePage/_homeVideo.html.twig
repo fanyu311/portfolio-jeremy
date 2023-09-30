@@ -13,7 +13,7 @@
 
 
 		{% for portfolio in portfolios %}
-			{% if '.mp4' in  portfolio.imageName %}
+			{% if '.mp4' in photo.imageName %}
 				<video loop autoplay muted class="photo">
 					<source src="{{ vich_uploader_asset(portfolio, 'image')}}">
 				</video>
