@@ -48,6 +48,7 @@ class PortfolioRepository extends ServiceEntityRepository
         return $this->createQueryBuilder('p')
             ->select('p', 'u')
             ->innerJoin('p.user', 'u')
+            ->orderBy('p.createdAt', 'DESC')
             ->getQuery()
             ->getResult();
     }
