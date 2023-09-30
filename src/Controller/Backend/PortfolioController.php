@@ -103,7 +103,7 @@ class PortfolioController extends AbstractController
         if (!$portfolio instanceof Portfolio) {
             $this->addFlash('error', 'portfolio non trouvé');
 
-            return $this->redirectToRoute('admin.articles.index', [], 404);
+            return $this->redirectToRoute('admin.portfolios.index', [], 404);
         }
 
         // 3.verifier le token 
