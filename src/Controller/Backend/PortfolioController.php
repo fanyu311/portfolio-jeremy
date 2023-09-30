@@ -21,7 +21,7 @@ class PortfolioController extends AbstractController
     #[Route('', name: '.index', methods: ['GET'])]
     public function index(): Response
     {
-        return $this->render('Backend/Portfolios/index.html.twig', [
+        return $this->render('Backend/Portfolio/index.html.twig', [
             // 这里一定要要跟vue里的nom一致
             'portfolios' => $this->portfolioRepo->findAllWithRelationInfo(),
         ]);
@@ -47,7 +47,7 @@ class PortfolioController extends AbstractController
             return $this->redirectToRoute('admin.portfolios.index');
         }
 
-        return $this->render('Backend/Portfolios/create.html.twig', [
+        return $this->render('Backend/Portfolio/create.html.twig', [
             'form' => $form,
 
         ]);
@@ -82,7 +82,7 @@ class PortfolioController extends AbstractController
             return $this->redirectToRoute('admin.portfolios.index');
         }
 
-        return $this->render('Backend/portfolios/edit.html.twig', [
+        return $this->render('Backend/Portfolio/edit.html.twig', [
             'form' => $form,
         ]);
     }
