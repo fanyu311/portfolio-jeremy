@@ -222,7 +222,7 @@ pre {
 .navbar-menu {
   display: none;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 992px) {
 .navbar-menu {
   display: block;
   margin-top: -1.3em;
@@ -372,7 +372,7 @@ pre {
     color: white;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 992px) {
     .container {
       width: 366px;
     }
@@ -432,7 +432,7 @@ pre {
     color: #575C56;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 992px) {
 
     /* hide classic menu */
     .footer {
