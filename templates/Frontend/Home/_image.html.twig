@@ -6,7 +6,7 @@
 					<div class="shadow"></div>
 					<div class="image-content">
 						<div class="text">
-							<div class="title">{{ photo.title}}</div>
+							<div class="title">{{ photo.title|sanitize_html}}</div>
 							{# <div class="sub">{{ photo.content}}</div> #}
 						</div>
 					</div>
