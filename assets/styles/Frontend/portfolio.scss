@@ -1,10 +1,10 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
 
 .portfolio-app  {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: top / cover url("../../images/about-5.jpg");
+    background: top / cover url("../../images/portfolio.jpg");
     width: 100%;
     height: calc(100vh - 70px); 
     // filter: blur(0.5px);
@@ -16,20 +16,25 @@
 
 
 .portfolio-app h1 {
-    margin-top: 7.5em;
+    margin-top: 5.8em;
     width: 50%;
     background: rgb(78, 78, 86,0.69);
-    color: rgb(223, 202, 195);
-    font-size: 2.5em;
+    color: rgb(230, 215, 210);
+    font-size: 2.8em;
     font-family: "Itim", sans-serif;
     text-align: center;
     border-radius: $border-radius;
+    padding: .2em;
+    line-height: 1em;
 }
 .portfolio-app p {
-    margin-top: 3.5em;
+    margin-top: 1.8em;
     width: 60%;
     text-align: center;
-    color: rgb(58, 53, 53);
+    color: rgb(135, 128, 128);
+    font-size: 1.5em;
+    line-height: 1.5em;
+    font-family: 'Courgette', sans-serif;
 }
 .portfolio-app-overlay {
     display: none;
@@ -37,18 +42,19 @@
 @media screen and (max-width: 992px) {
     
     .portfolio-app h1{
-        font-size: 1.2em;
+        font-size: 1.8em;
         background: none;
         color: rgb(152, 132, 132);
         text-align: center;
         width: 60%;
-        margin-top: 10em;
+        margin-top: 7em;
     }
     .portfolio-app p{
-        width: 90%;
-        color: rgb(244, 243, 241);
-        margin-top: 2em;
-        line-height: 1.4em;
+        // width: 90%;
+        // color: rgb(244, 243, 241);
+        // margin-top: 8em;
+        // line-height: 1.4em;
+        display: none;
         
     }
     .portfolio-app-overlay{
