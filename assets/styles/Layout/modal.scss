@@ -30,10 +30,16 @@
     }
     @media screen and (max-width: 992px) {
         img{
-           
+                width: auto !important;
                 height: 70% !important;
             
             
+        }
+    }
+    @media screen and (max-width: 768px) {
+        img {
+            height: auto !important;
+            width: auto !important;
         }
     }
     
