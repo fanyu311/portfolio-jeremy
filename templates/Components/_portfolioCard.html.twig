@@ -26,6 +26,11 @@
 		</p>
 
 		<p>{{ portfolio.content|slice(0, 400)|sanitize_html}}</p>
+		<em class="blog-card-content-tags text-muted">
+			{% for categorie in portfolio.categories %}
+				#{{ categorie.titre }}
+			{% endfor %}
+		</em>
 
 	</div>
 

@@ -1,0 +1,80 @@
+.categories {
+    display: flex;
+    flex-direction: column;
+    &-head{
+        margin: auto;
+        text-align: center;
+        padding: 3em 0;
+
+        h1{
+            margin-bottom: 30px;
+        }
+        
+
+        a {
+            
+            border: 1px solid #1c1a1a;
+            border-radius: 30px;
+            padding: 0.5em;
+            background-color: rgb(188, 91, 91);
+            color: #1c1a1a;
+        }
+    }
+    
+
+
+    &-blog {
+        
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr;
+        grid-column-gap: 50px;
+        gap: 20px;
+      
+
+        .blog-list{
+            border: 1px solid #35393bef;
+            border-radius: 30px;
+            margin-bottom: 20px; // 适当调整底部间距
+            text-align: center;
+            padding: 1.5em 0;
+           
+  
+        }
+      
+        
+          .c-change {
+            display: flex;
+            justify-content: space-around;
+            a {
+                border: 1px solid #1c1a1a;
+                border-radius: 8px;
+                padding: 0 0.5em;
+                background-color: rgb(98, 184, 114);
+                color: #2e2b2b;
+            }
+          }
+    }
+
+  
+
+}
+
+
+.creer {
+    margin-top: 5em;
+    padding: 2em;
+    border: 2px solid #292727;
+    border-radius: 30px;
+
+
+    .c-creer{
+        form {
+         margin-top: 2em;
+         margin-bottom: 1em;
+        }
+}
+
+    
+}
+

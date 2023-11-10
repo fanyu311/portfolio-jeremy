@@ -54,26 +54,6 @@
     height: 40px;
     transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
 }
-.item:nth-child(1) {
-    color: #fc6e51;
-
-}
-.item:nth-child(2) {
-    color: #ffce54;
-    
-}
-.item:nth-child(3) {
-    color: #2ecc71;
-    
-}
-.item:nth-child(4) {
-    color: #5d9cec;
-    
-}
-.item:nth-child(5) {
-    color: #ac92ec;
-    
-}
 .item .image-content .text {
     display: flex;
     flex-direction: column;

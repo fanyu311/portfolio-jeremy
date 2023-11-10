@@ -2,11 +2,15 @@
 
 namespace App\Form;
 
+use App\Entity\Categorie;
 use App\Entity\Portfolio;
 use App\Form\PortfolioImageType;
+use Doctrine\ORM\EntityRepository;
+use Doctrine\ORM\QueryBuilder;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Vich\UploaderBundle\Form\Type\VichImageType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -58,6 +62,17 @@ class PortfolioType extends AbstractType
                 'delete_label' => 'Supprimer l\'image',
                 'image_uri' => true,
                 'download_uri' => false,
+
+
+            ])
+            ->add('categories', EntityType::class, [
+                'label' => 'Catégories:',
+                'class' => Categorie::class,
+                'choice_label' => 'titre',
+                'expanded' => false,
+                'multiple' => true,
+                'autocomplete' => true,
+                'required' => false,
             ]);
     }
 

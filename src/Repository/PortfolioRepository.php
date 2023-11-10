@@ -46,8 +46,9 @@ class PortfolioRepository extends ServiceEntityRepository
     public function findAllWithRelationInfo(): array
     {
         return $this->createQueryBuilder('p')
-            ->select('p', 'u')
+            ->select('p', 'u', 'c')
             ->innerJoin('p.user', 'u')
+            ->leftJoin('p.categories', 'c')
             ->orderBy('p.createdAt', 'DESC')
             ->getQuery()
             ->getResult();
