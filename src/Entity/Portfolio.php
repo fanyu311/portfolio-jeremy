@@ -5,7 +5,7 @@ namespace App\Entity;
 
 
 
-use App\Entity\Categorie;
+
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
@@ -89,14 +89,12 @@ class Portfolio
     #[ORM\JoinColumn(nullable: false)]
     private ?User $user = null;
 
-    #[ORM\ManyToMany(targetEntity: Categorie::class, inversedBy: 'portfolios')]
-    private Collection $categories;
+
 
 
 
     public function __construct()
     {
-        $this->categories = new ArrayCollection();
     }
 
 
@@ -251,30 +249,6 @@ class Portfolio
     public function setUser(?User $user): static
     {
         $this->user = $user;
-
-        return $this;
-    }
-
-    /**
-     * @return Collection<int, Categorie>
-     */
-    public function getCategories(): Collection
-    {
-        return $this->categories;
-    }
-
-    public function addCategory(Categorie $category): static
-    {
-        if (!$this->categories->contains($category)) {
-            $this->categories->add($category);
-        }
-
-        return $this;
-    }
-
-    public function removeCategory(Categorie $category): static
-    {
-        $this->categories->removeElement($category);
 
         return $this;
     }

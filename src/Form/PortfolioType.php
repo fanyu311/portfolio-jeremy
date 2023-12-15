@@ -64,15 +64,6 @@ class PortfolioType extends AbstractType
                 'download_uri' => false,
 
 
-            ])
-            ->add('categories', EntityType::class, [
-                'label' => 'Catégories:',
-                'class' => Categorie::class,
-                'choice_label' => 'titre',
-                'expanded' => false,
-                'multiple' => true,
-                'autocomplete' => true,
-                'required' => false,
             ]);
     }
 
